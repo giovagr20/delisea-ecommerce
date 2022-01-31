@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 import logo from '../logocode.png';
+import { CartWidget } from './CartWidget';
 
 const nombreApp = 'Delisea Gourmet';
 
@@ -20,7 +21,7 @@ export const Navbar = () => {
                     aria-label='Toggle navigation'>
                     <span className='navbar-toggler-icon'></span>
                 </button>
-                <div className='collapse navbar-collapse d-right' id='navbarNav'>
+                <div className='collapse navbar-collapse d-center' id='navbarNav'>
                     <ul className='navbar-nav'>
                         <li className='nav-item'>
                             <a className='nav-link active' aria-current='page' href='#'> Inicio</a>
@@ -31,6 +32,7 @@ export const Navbar = () => {
                         <li className='nav-item'>
                             <a className='nav-link' href='#'> Contactenos</a>
                         </li>
+                        <CartWidget />
                     </ul>
                 </div>
             </div>

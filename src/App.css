@@ -41,8 +41,8 @@
   color: aliceblue !important;
 }
 
-.d-right {
-  align-items: flex-end !important;
+.d-center {
+  align-items: center !important;
   flex-grow: 0 !important;
-  padding-right: 100px;
+  flex-basis: 50% !important;
 }
