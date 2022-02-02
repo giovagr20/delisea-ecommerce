@@ -42,7 +42,18 @@
 }
 
 .d-center {
-  align-items: center !important;
+  justify-content: center !important;
+  flex-grow: 1 !important;
+}
+
+.d-right {
+  justify-content: flex-end !important;
   flex-grow: 0 !important;
-  flex-basis: 50% !important;
+}
+
+#title-app {
+  font-family: fantasy !important;
+  font-size: x-large !important;
+  font-weight: bold !important;
+  letter-spacing: 5px !important;
 }
