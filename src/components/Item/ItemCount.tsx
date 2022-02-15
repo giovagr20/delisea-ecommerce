@@ -39,7 +39,7 @@ export const ItemCount = (props: any) => {
   return (
     <>
       <div className="row">
-        <div className="col-sm-2">
+        <div className="col-sm">
           <div className="input-group mb-3">
             <button
               onClick={setMaximumStock}
@@ -48,14 +48,7 @@ export const ItemCount = (props: any) => {
             >
               +
             </button>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="0"
-              aria-label="0"
-              aria-describedby="basic-addon1"
-              value={stockAvailable}
-            />
+            <span className="px-2"> {stockAvailable} </span>
             <button
               onClick={setMinimumStock}
               className="btn btn-outline-primary"
@@ -65,10 +58,10 @@ export const ItemCount = (props: any) => {
             </button>
           </div>
         </div>
-        <div className="col-sm-2">
+        <div className="col-sm">
           <button
             onClick={addProductQuantity}
-            className="btn btn-success"
+            className="btn btn-success btn-sm"
             id="basic-addon1"
           >
             Agregar <em className="bi bi-check2-all" />

@@ -57,3 +57,7 @@
   font-weight: bold !important;
   letter-spacing: 5px !important;
 }
+
+.card-img-top:hover {
+  background-color: darkgrey !important;
+}
