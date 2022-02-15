@@ -37,11 +37,16 @@ export const Navbar = () => {
                 Inicio
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
+            <li className="nav-item dropdown">
+              <a className="nav-link  dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {" "}
                 Productos
               </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="#">Mariscos</a></li>
+                <li><a className="dropdown-item" href="#">Pulpos y Camarones</a></li>
+                <li><a className="dropdown-item" href="#">Pescados</a></li>
+              </ul>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
