@@ -61,3 +61,7 @@
 .card-img-top:hover {
   background-color: darkgrey !important;
 }
+
+.hover-card:hover {
+  background-color: grey;
+}

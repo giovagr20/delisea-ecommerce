@@ -4,19 +4,13 @@ import { ItemList } from './ItemList';
 import { ItemProducts } from '../../constants/products_items';
 import { Products } from '../../models/products';
 import { customFetch } from '../../utils/customFetch';
-
-/**                 <ItemCount stock="5" initial="1" />
- */
+import { useParams } from 'react-router';
 
 export const ItemListContainer = () => {
 
-    const [items, setItems] = useState<Array<Products>>();
+    const { idCategory } = useParams<{ idCategory: string }>();
 
-    useEffect(() => {
-        customFetch(2000, ItemProducts.filter((item: Products) => {
-            if (item.id > 0) return item;
-        })).then((result: Array<Products>) => setItems(result)).catch(err => console.log(err));
-    }, [items]);
+    const numberIdCategory: number = parseInt(idCategory as string);
 
     return (
         <>
@@ -24,7 +18,7 @@ export const ItemListContainer = () => {
                 <div className="display-6 text-center">
                     <strong>Agrega tus productos!</strong></div>
                 <hr />
-                <ItemList {...items as Array<Products>} />
+                <ItemList {...numberIdCategory} />
             </div>
         </>
     )
