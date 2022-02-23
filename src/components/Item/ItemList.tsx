@@ -17,10 +17,7 @@ export const ItemList = (props: number) => {
         customFetch(2000, ItemProducts.filter((item: Products) => {
             if (parseInt(idCategory as string) === undefined) return item;
             return item.idCategory === parseInt(idCategory as string);
-        })).then((result: Array<Products>) => {
-            console.log(result);
-            setProperties(result);
-        }).catch(err => console.log(err));
+        })).then((result: Array<Products>) => setProperties(result)).catch(err => console.log(err));
     }, [properties]);
     return (
         <> {

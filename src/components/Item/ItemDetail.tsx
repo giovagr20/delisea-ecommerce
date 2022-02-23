@@ -1,7 +1,14 @@
 import { Products } from "../../models/products";
-import { ItemCount } from "./ItemCount";
+import { ItemCountDetail } from "./ItemCountDetail";
+import { Qty } from "../../models/quantity";
+
+
 
 export const ItemDetail = (props: Products) => {
+
+  const initial = 1;
+  const stock = 20;
+
   return (
     <div className="row p-4">
       <div className="col-md-4">
@@ -25,7 +32,7 @@ export const ItemDetail = (props: Products) => {
                     <code> $ {props.price}.00 </code>
                   </div>
                   <div className="accordion-body">
-                    <ItemCount initial="1" stock="5" />
+                    <ItemCountDetail initial={initial} stock={stock} product = {props} />
                   </div>
                 </div>
               </div>

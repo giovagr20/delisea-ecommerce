@@ -2,15 +2,18 @@ import { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../Cart/CartContext";
+import { CartContext, CartContextProvider } from "../Cart/CartContext";
+import { Products } from "../../models/products";
 
-export const ItemCount = (props: any) => {
+export const ItemCountDetail = ({ initial, stock, product }: { initial: number, stock: number, product: Products }) => {
+  const [stockAvailable, setStockAvailable] = useState(initial);
+
+  const cartContext = useContext(CartContext);
   let navigate = useNavigate();
-  const [stockAvailable, setStockAvailable] = useState(props.initial);
 
   let setMaximumStock = () => {
-    if (parseInt(stockAvailable) < props.stock)
-      setStockAvailable(parseInt(stockAvailable) + 1);
+    if (stockAvailable < stock)
+      setStockAvailable(stockAvailable + 1);
     else
       Swal.fire({
         title: "No hay más en stock",
@@ -20,8 +23,8 @@ export const ItemCount = (props: any) => {
   };
 
   let setMinimumStock = () => {
-    if (parseInt(stockAvailable) > 1)
-      setStockAvailable(parseInt(stockAvailable) - 1);
+    if (stockAvailable > 1)
+      setStockAvailable(stockAvailable - 1);
     else
       Swal.fire({
         title: "Debes elegir por lo menos un producto",
@@ -38,6 +41,7 @@ export const ItemCount = (props: any) => {
       showConfirmButton: true,
     }).then((response) => {
       if (response.isConfirmed) {
+
         navigate('/cart', { replace: true });
       }
     })
@@ -76,5 +80,5 @@ export const ItemCount = (props: any) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
